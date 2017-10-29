@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const ease = require('./lib/ease');
 const setup = require('./lib/ease/setup');
@@ -17,5 +17,7 @@ process.on('SIGINT', function() {
 
   await setup(page);
   await login(page, process.env.EASE_USER, process.env.EASE_PASS);
-  // await browser.close();
+
+  await page.waitFor(1000);
+  await browser.exit();
 })();
