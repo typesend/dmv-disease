@@ -1,0 +1,5 @@
+/* this stylesheet is injected into Firefox pages */
+
+div#bottom {
+  background-color: white;
+}
