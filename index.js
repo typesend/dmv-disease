@@ -1,22 +1,21 @@
 require('dotenv').config()
 
-const Geppetto = require('./lib/geppetto');
-let EASE = new Geppetto;
-
-console.log("Starting...");
+const ease = require('./lib/ease');
+const setup = require('./lib/ease/setup');
+const login = require('./lib/ease/login');
 
 process.on('SIGINT', function() {
-    console.log("Caught interrupt signal");
-    EASE.close();
-    process.exit();
+  (async () => {
+    await browser.close();
+  })();
+  process.exit();
 });
 
 (async () => {
-  await EASE.initialize(process.env.EASE_URL);
-  EASE.tab.waitFor(500);
+  const browser = await ease();
+  const page = await browser.newPage();
 
-  await EASE.login(process.env.EASE_USER, process.env.EASE_PASS);
-  // await EASE.modeSelection();
-
-  EASE.close();
+  await setup(page);
+  await login(page, process.env.EASE_USER, process.env.EASE_PASS);
+  // await browser.close();
 })();
