@@ -25,13 +25,24 @@ function injection(frame) {
   })();
 }
 
+function takeScreenshot(page) {
+  let timestamp = +new Date();
+  let path = 'screenshots/' + timestamp + '.png';
+  (async () => {
+    await page.screenshot({path});
+    console.log(path);
+  })();
+}
+
 (async () => {
   const browser = await ease();
   const page = await browser.newPage();
-  page.on('framenavigated', injection);
 
   await setup(page);
   await login(page, process.env.EASE_USER, process.env.EASE_PASS);
+
+  page.on('framenavigated', injection);
+  page.on('load', () => { takeScreenshot(page) });
 
   const tcode = 'DLA';
   await selectTransaction(page, tcode);
