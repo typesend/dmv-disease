@@ -5,6 +5,7 @@ const setup = require('./lib/ease/setup');
 const login = require('./lib/ease/login');
 const selectTransaction = require('./lib/ease/select');
 const footer = require('./lib/ease/footer');
+const button = require('./lib/ease/button');
 
 process.on('SIGINT', function() {
   (async () => {
@@ -44,9 +45,19 @@ function takeScreenshot(page) {
   page.on('framenavigated', injection);
   page.on('load', () => { takeScreenshot(page) });
 
+  const transactions = `SPC SPD SPO SPR SRX CDA DIR DAF
+    04M 06M 07M 12M 13M 14M 20M 92M 98M 05M 22M 30U 38U 60U 69U 70U
+    FCP PRF 07Q OLI 10Q`.toUpperCase().split(/\s+/);
+  console.log('testing', transactions.length, 'transactions...');
+  for (let tcode of transactions) {
+    await selectTransaction(page, tcode);
+    console.log(await footer(page))
+    await button(page, 'cancel');
+  }
+
   const tcode = 'DLA';
-  await selectTransaction(page, tcode);
-  console.log(await footer(page))
+
+
 
   await page.waitFor(1000);
   await browser.exit();

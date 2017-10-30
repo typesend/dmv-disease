@@ -59,4 +59,5 @@ typings/
 
 .DS_*
 screenshots/*.png
+screenshots/*.zip
 docs
