@@ -1,0 +1,840 @@
+{
+  "breadcrumbs":[
+    {
+      "class":"selected",
+      "innerText":"HQ Inquiry"
+    },
+    {
+      "class":"",
+      "innerText":"Collect DL Data"
+    },
+    {
+      "class":"",
+      "innerText":"Process Payment"
+    },
+    {
+      "class":"",
+      "innerText":"Review Documents"
+    }
+  ],
+  "form":[
+    {
+      "tagName":"input",
+      "type":"hidden",
+      "name":"MAIN_FORM",
+      "value":"MAIN_FORM"
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:token",
+      "type":"hidden",
+      "value":"1509743637917"
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:contextPathName",
+      "id":"MAIN_FORM:contextPathName",
+      "type":"hidden",
+      "value":"EASE"
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:PageName",
+      "type":"hidden",
+      "name":"MAIN_FORM:PageName",
+      "value":"inquiry"
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:hidCityCodes",
+      "type":"hidden",
+      "name":"MAIN_FORM:hidCityCodes",
+      "value":""
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:appOfficeId",
+      "innerText":"APP OFFICE:"
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:appOfficeId",
+      "type":"text",
+      "name":"MAIN_FORM:appOfficeId",
+      "class":"inputText",
+      "maxlength":"3",
+      "size":"3",
+      "tabindex":"10",
+      "title":"Enter application office ID",
+      "disabled":"disabled",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));"
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:processDate",
+      "innerText":"PROCESS DATE: "
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:processDate",
+      "type":"text",
+      "name":"MAIN_FORM:processDate",
+      "value":"11152017",
+      "class":"inputText",
+      "maxlength":"8",
+      "size":"8",
+      "tabindex":"11",
+      "title":"Enter process date",
+      "disabled":"disabled",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));"
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:licenseNumber",
+      "innerText":"DL/ID NUMBER:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:licenseNumber",
+      "type":"text",
+      "name":"MAIN_FORM:licenseNumber",
+      "class":"inputText",
+      "maxlength":"8",
+      "onblur":"javascript:manageNameFields();",
+      "onkeyup":"javascript:manageNameSearchFields();",
+      "size":"8",
+      "tabindex":"12",
+      "title":"Enter license number or ID Number",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputText",
+      "innerText":"- OR -",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:firstName",
+      "innerText":"FIRST NAME:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:firstName",
+      "type":"text",
+      "name":"MAIN_FORM:firstName",
+      "class":"inputText",
+      "maxlength":"27",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onchange":"controlChangeInquiry(this,'fnValueChange');",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "size":"35",
+      "tabindex":"14",
+      "title":"Enter first name",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:fnValueChange",
+      "type":"hidden",
+      "name":"MAIN_FORM:fnValueChange",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:middleName",
+      "innerText":"MIDDLE NAME:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:middleName",
+      "type":"text",
+      "name":"MAIN_FORM:middleName",
+      "class":"inputText",
+      "maxlength":"27",
+      "onchange":"controlChangeInquiry(this,'mnValueChange');",
+      "size":"35",
+      "tabindex":"15",
+      "title":"Enter middle name",
+      "disabled":"",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:mnValueChange",
+      "type":"hidden",
+      "name":"MAIN_FORM:mnValueChange",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:lastName",
+      "innerText":"LAST NAME:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:lastName",
+      "type":"text",
+      "name":"MAIN_FORM:lastName",
+      "class":"inputText",
+      "maxlength":"27",
+      "onchange":"controlChangeInquiry(this,'lnValueChange');",
+      "size":"35",
+      "tabindex":"16",
+      "title":"Enter last name",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:lnValueChange",
+      "type":"hidden",
+      "name":"MAIN_FORM:lnValueChange",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:suffix",
+      "innerText":"SUFFIX:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"select",
+      "id":"MAIN_FORM:suffix",
+      "name":"MAIN_FORM:suffix",
+      "size":"1",
+      "tabindex":"17",
+      "title":"Enter name suffix",
+      "disabled":false,
+      "options":[
+        {
+          "innerText":"",
+          "value":"",
+          "selected":true
+        },
+        {
+          "innerText":"SR",
+          "value":"SR",
+          "selected":false
+        },
+        {
+          "innerText":"JR",
+          "value":"JR",
+          "selected":false
+        },
+        {
+          "innerText":"II",
+          "value":"II",
+          "selected":false
+        },
+        {
+          "innerText":"III",
+          "value":"III",
+          "selected":false
+        },
+        {
+          "innerText":"IV",
+          "value":"IV",
+          "selected":false
+        }
+      ],
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:birthDate",
+      "innerText":"BIRTHDATE:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:birthDate",
+      "type":"text",
+      "name":"MAIN_FORM:birthDate",
+      "class":"inputText",
+      "maxlength":"8",
+      "onchange":"controlChange(this);controlChangeInquiry(this,'bdValueChange');",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "size":"8",
+      "tabindex":"18",
+      "title":"Enter date of birth",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:valueChange",
+      "type":"hidden",
+      "name":"MAIN_FORM:valueChange",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:bdValueChange",
+      "type":"hidden",
+      "name":"MAIN_FORM:bdValueChange",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:cityCode",
+      "innerText":"CITY CODE:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "rendered":"rendered",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "tabindex":"19",
+      "maxlength":"2",
+      "size":"2",
+      "id":"MAIN_FORM:cityCode",
+      "name":"MAIN_FORM:cityCode",
+      "class":"selectOneMenu",
+      "title":"Enter city code",
+      "value":"",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"span",
+      "class":"suggest-hidden",
+      "innerText":"[MAIN_FORM:cityCode;Y;250[]]",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:techOfficeId",
+      "type":"hidden",
+      "name":"MAIN_FORM:techOfficeId",
+      "value":"298",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputText",
+      "innerText":"- OR -",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:cityName",
+      "innerText":"CITY:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:cityName",
+      "type":"text",
+      "name":"MAIN_FORM:cityName",
+      "class":"inputText hideIfDlNumber",
+      "maxlength":"13",
+      "size":"15",
+      "tabindex":"20",
+      "title":"Enter city name",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:state",
+      "innerText":"STATE:",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"input",
+      "rendered":"rendered",
+      "tabindex":"21",
+      "maxlength":"2",
+      "size":"2",
+      "id":"MAIN_FORM:state",
+      "name":"MAIN_FORM:state",
+      "class":"selectOneMenu",
+      "title":"Enter state",
+      "value":"",
+      "autocomplete":"off",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"span",
+      "class":"suggest-hidden",
+      "innerText":"[MAIN_FORM:state;Y;250[[AB;AB - Alberta][AK;AK - Alaska][AL;AL - Alabama][AR;AR - Arkansas][AS;AS - American Samoa][AZ;AZ - Arizona][BC;BC - British Columbia][CA;CA - California][CN;CN - CCMTA Canada's AAMVA][CO;CO - Colorado][CT;CT - Conneticut][DC;DC - District of Columbia][DE;DE - Delaware][FL;FL - Florida][FR;FR - Province District of Franklin][GA;GA - Georgia][GU;GU - Guam][HI;HI - Hawaii][IA;IA - Iowa][ID;ID - Idaho][IL;IL - Illinois][IN;IN - Indiana][KE;KE - Province District of Keewatin][KS;KS - Kansas][KY;KY - Kentucky][LA;LA - Louisiana][MA;MA - Massachusetts][MB;MB - Manitoba][MD;MD - Maryland][ME;ME - Maine][MI;MI - Michigan][MK;MK - Province District of Mackenzie][MN;MN - Minnesota][MO;MO - Missouri][MS;MS - Mississippi][MT;MT - Montana][NB;NB - New Brunswick][NC;NC - North Carolina][ND;ND - North Dakota][NE;NE - Nebraska][NF;NF - Newfoundland][NH;NH - New Hampshire][NJ;NJ - New Jersey][NM;NM - New Mexico][NS;NS - Nova Scotia][NT;NT - Northwest Territory][NU;NU - Nunavut][NV;NV - Nevada][NY;NY - New York][OH;OH - Ohio][OK;OK - Oklahoma][ON;ON - Ontario][OR;OR - Oregon][PA;PA - Pennsylvania][PE;PE - Prince Edward Island][PR;PR - Puerto Rico][QC;QC - Quebec][RI;RI - Rhode Island][SC;SC - South Carolina][SD;SD - South Dakota][SK;SK - Saskatchewan][TN;TN - Tennessee][TX;TX - Texas][UT;UT - Utah][VA;VA - Virginia][VI;VI - Virgin Islands][VT;VT - Vermont][WA;WA - Washington][WI;WI - Wisconsin][WV;WV - West Virginia][WY;WY - Wyoming][YT;YT - Yukon Territory]]]",
+      "fieldset":{
+        "id":"appInfo",
+        "class":"fieldSet1",
+        "legend":"Enter Applicant's Information"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:appliedLicenseClass",
+      "innerText":"SELECT A CLASS: ",
+      "fieldset":{
+        "id":"appInfo2",
+        "class":"fieldSet1",
+        "legend":"Select From the List Below"
+      }
+    },
+    {
+      "tagName":"input",
+      "rendered":"rendered",
+      "onchange":"visibleHidden(this, '', 'motor,endorsementTable,categoryTable',false);",
+      "tabindex":"25",
+      "maxlength":"1",
+      "size":"1",
+      "id":"MAIN_FORM:appliedLicenseClass",
+      "name":"MAIN_FORM:appliedLicenseClass",
+      "class":"selectOneMenu",
+      "title":"Enter applied license class ",
+      "value":"",
+      "autocomplete":"off",
+      "onfocus":"return(hX_5.runEvent(this, event));",
+      "onblur":"return(hX_5.runEvent(this, event));",
+      "onkeydown":"return(hX_5.runEvent(this, event));",
+      "onkeypress":"return(hX_5.runEvent(this, event));",
+      "onkeyup":"return(hX_5.runEvent(this, event));",
+      "fieldset":{
+        "id":"appInfo2",
+        "class":"fieldSet1",
+        "legend":"Select From the List Below"
+      }
+    },
+    {
+      "tagName":"span",
+      "class":"suggest-hidden",
+      "innerText":"[MAIN_FORM:appliedLicenseClass;Y;250[[A;A - Commercial Class A][B;B - Commercial Class B][C;C - Commercial Class C][D;D - Non-Commercial Class A][E;E - Non-Commercial Class B][F;F - Non-Commercial Class C][G;G - AB60 Non-Commercial Class A][H;H - AB60 Non-Commercial Class B][I;I - AB60 Non-Commercial Class C][J;J - AB60 Motorcycle][M;M - Motorcycle]]]",
+      "fieldset":{
+        "id":"appInfo2",
+        "class":"fieldSet1",
+        "legend":"Select From the List Below"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:motorCycle",
+      "type":"checkbox",
+      "name":"MAIN_FORM:motorCycle",
+      "class":"selectBooleanCheckBox",
+      "tabindex":"26",
+      "disabled":true,
+      "checked":false,
+      "fieldset":{
+        "id":"appInfo2",
+        "class":"fieldSet1",
+        "legend":"Select From the List Below"
+      }
+    },
+    {
+      "tagName":"label",
+      "class":"outputLabel",
+      "for":"MAIN_FORM:motorCycle",
+      "innerText":"MOTORCYCLE",
+      "fieldset":{
+        "id":"appInfo2",
+        "class":"fieldSet1",
+        "legend":"Select From the List Below"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:endorsements",
+      "id":"MAIN_FORM:endorsements:0",
+      "value":"DT",
+      "type":"checkbox",
+      "tabindex":"30",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:endorsements:0",
+      "innerText":" DT - DOUBLE TRIPLE",
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:endorsements",
+      "id":"MAIN_FORM:endorsements:1",
+      "value":"HM",
+      "type":"checkbox",
+      "tabindex":"30",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:endorsements:1",
+      "innerText":" HM - HAZARDOUS MATERIAL",
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:endorsements",
+      "id":"MAIN_FORM:endorsements:2",
+      "value":"PV",
+      "type":"checkbox",
+      "tabindex":"30",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:endorsements:2",
+      "innerText":" PV - PASSENGER VEH",
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:endorsements",
+      "id":"MAIN_FORM:endorsements:3",
+      "value":"SB",
+      "type":"checkbox",
+      "tabindex":"30",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:endorsements:3",
+      "innerText":" SB - SCHOOL BUS",
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:endorsements",
+      "id":"MAIN_FORM:endorsements:4",
+      "value":"TV",
+      "type":"checkbox",
+      "tabindex":"30",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:endorsements:4",
+      "innerText":" TV - TANK VEHICLE",
+      "fieldset":{
+        "id":"MAIN_FORM:endorsementTable",
+        "class":"width100 endorsementTableStyle outputLabel",
+        "legend":"ENDORSEMENTS"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:category",
+      "id":"MAIN_FORM:category:0",
+      "value":"1",
+      "type":"checkbox",
+      "tabindex":"31",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:category:0",
+      "innerText":" 1 - FIREFIGHTER CLS A",
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:category",
+      "id":"MAIN_FORM:category:1",
+      "value":"2",
+      "type":"checkbox",
+      "tabindex":"31",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:category:1",
+      "innerText":" 2 - FIREFIGHTER CLS B",
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"input",
+      "name":"MAIN_FORM:category",
+      "id":"MAIN_FORM:category:2",
+      "value":"3",
+      "type":"checkbox",
+      "tabindex":"31",
+      "checked":false,
+      "disabled":false,
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"label",
+      "for":"MAIN_FORM:category:2",
+      "innerText":" 3 - TRAILER COACH",
+      "fieldset":{
+        "id":"MAIN_FORM:categoryTable",
+        "class":"width100 categoryTableStyle outputLabel",
+        "legend":"CATEGORY"
+      }
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:button1",
+      "type":"submit",
+      "name":"MAIN_FORM:button1",
+      "value":"ENTER",
+      "class":"commandButton",
+      "disabled":false
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:button2",
+      "type":"submit",
+      "name":"MAIN_FORM:button2",
+      "value":"CNA BYPASS",
+      "disabled":true,
+      "class":"commandButton"
+    },
+    {
+      "tagName":"input",
+      "id":"MAIN_FORM:button3",
+      "type":"submit",
+      "name":"MAIN_FORM:button3",
+      "value":"CANCEL",
+      "class":"commandButton",
+      "disabled":false
+    },
+    {
+      "tagName":"input",
+      "type":"hidden",
+      "name":"javax.faces.ViewState",
+      "id":"javax.faces.ViewState",
+      "value":"j_id1:j_id4"
+    }
+  ],
+  "footer":{
+    "screenName":"Inquiry",
+    "transactionCode":"DLP",
+    "officeEmployee":"298319BD",
+    "workDate":"11152017",
+    "time":"14:13",
+    "easeVersion":"2.6.3.8"
+  }
+}
