@@ -4,12 +4,41 @@ console.log('DISEASE HAS BEEN INJECTED', window.name)
 
 window.disease = disease = {};
 
+disease.activeElement = function() {
+  let el = document.activeElement;
+  let elementJSON = { tagName: el.tagName.toLowerCase() };
+  el.getAttributeNames().forEach(attr => {
+    elementJSON[attr] = el.getAttribute(attr);
+  });
+  return elementJSON;
+};
+
+disease.messages = function() {
+  let selector = 'div#messages > ol.errorMessagesOl > li';
+  let elements = document.querySelectorAll(selector);
+  let results = [...elements].map(el => {
+    let elementJSON = { tagName: el.tagName.toLowerCase() };
+    el.getAttributeNames().forEach(attr => {
+      elementJSON[attr] = el.getAttribute(attr);
+    });
+    elementJSON.innerText = el.innerText;
+    return elementJSON;
+  });
+  console.log('messages', results);
+  return results;
+};
+
 disease.formElementsToJSON = function() {
   let elements = document.forms[0].querySelectorAll('input, select, label, span.suggest-hidden');
   let results = [...elements].map(el => {
     let elementJSON = { tagName: el.tagName.toLowerCase() };
+    const blacklistedAttrs = [
+      'onfocus', 'onblur', 'onkeydown',
+      'onkeypress', 'onkeyup', 'onchange'
+    ];
 
     el.getAttributeNames().forEach(attr => {
+      if (blacklistedAttrs.includes(attr)) return;
       elementJSON[attr] = el.getAttribute(attr);
     });
 
@@ -58,4 +87,4 @@ disease.formElementsToJSON = function() {
   });
   console.log('formElementsToJSON', results);
   return results;
-}
+};
