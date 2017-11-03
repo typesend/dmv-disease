@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-const winston = require('winston');
 const ease = require('./lib/ease');
 const setup = require('./lib/ease/setup');
 const login = require('./lib/ease/login');
@@ -49,8 +48,8 @@ function takeScreenshot(page) {
   page.on('load', () => { takeScreenshot(page) });
   page.on('load', () => { logJSON(page) });
 
-  await page.waitFor(1000);
-  await browser.exit();
+  //await page.waitFor(1000);
+  //await browser.exit();
 })();
 
 async function everyFirstPage(page) {
