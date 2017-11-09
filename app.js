@@ -41,8 +41,7 @@ app.use('/graphql', graphqlHTTP({
   pretty: true,
   extensions({ document, variables, operationName, result }) {
     return {
-      easeUser: process.env.EASE_USER,
-      wsEndpoint: global.browser.wsEndpoint(),
+      easeUser: process.env.EASE_USER
     };
   }
 }));
