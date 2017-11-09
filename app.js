@@ -12,7 +12,7 @@ const graphqlHTTP = require('express-graphql');
 const schema = require('./lib/graphql/schema');
 const resolvers = require('./lib/graphql/resolvers');
 
-const port = 9000;
+const port = process.env.PORT;
 const app = express();
 
 const injection = function(frame) {
