@@ -45,7 +45,7 @@ function takeScreenshot(page) {
   await login(page, process.env.EASE_USER, process.env.EASE_PASS);
 
   page.on('framenavigated', injection);
-  page.on('load', () => { takeScreenshot(page) });
+  // page.on('load', () => { takeScreenshot(page) });
   page.on('load', () => { logJSON(page) });
 
   //await page.waitFor(1000);

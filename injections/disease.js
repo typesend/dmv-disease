@@ -1,5 +1,3 @@
-/* this script is injected into Firefox pages */
-
 console.log('DISEASE HAS BEEN INJECTED', window.name)
 
 window.disease = disease = {};
@@ -11,6 +9,12 @@ disease.activeElement = function() {
     elementJSON[attr] = el.getAttribute(attr);
   });
   return elementJSON;
+};
+
+disease.pageDetails = function() {
+  let url = document.URL;
+  let title = document.title;
+  return {url, title};
 };
 
 disease.messages = function() {

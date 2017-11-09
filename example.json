@@ -468,11 +468,6 @@
       "size":"15",
       "tabindex":"20",
       "title":"Enter city name",
-      "onfocus":"return(hX_5.runEvent(this, event));",
-      "onblur":"return(hX_5.runEvent(this, event));",
-      "onkeydown":"return(hX_5.runEvent(this, event));",
-      "onkeypress":"return(hX_5.runEvent(this, event));",
-      "onkeyup":"return(hX_5.runEvent(this, event));",
       "fieldset":{
         "id":"appInfo",
         "class":"fieldSet1",
