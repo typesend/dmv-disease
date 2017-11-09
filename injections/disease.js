@@ -5,7 +5,12 @@ window.disease = disease = {};
 disease.activeElement = function() {
   let el = document.activeElement;
   let elementJSON = { tagName: el.tagName.toLowerCase() };
+  const blacklistedAttrs = [
+    'onfocus', 'onblur', 'onkeydown',
+    'onkeypress', 'onkeyup', 'onchange'
+  ];
   el.getAttributeNames().forEach(attr => {
+    if (blacklistedAttrs.includes(attr)) return;
     elementJSON[attr] = el.getAttribute(attr);
   });
   return elementJSON;
@@ -28,7 +33,6 @@ disease.messages = function() {
     elementJSON.innerText = el.innerText;
     return elementJSON;
   });
-  console.log('messages', results);
   return results;
 };
 
@@ -89,6 +93,5 @@ disease.formElementsToJSON = function() {
 
     return elementJSON;
   });
-  console.log('formElementsToJSON', results);
   return results;
 };
