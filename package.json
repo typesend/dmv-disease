@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "clear; node app.js",
-    "startmon": "clear; nodemon app.js"
+    "startmon": "clear; nodemon --inspect app.js"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
