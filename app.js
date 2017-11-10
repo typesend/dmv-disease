@@ -12,16 +12,20 @@ initBrowser(global);
 const port = process.env.PORT;
 const app = express();
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: resolvers,
-  graphiql: true,
-  pretty: true,
-  extensions({ document, variables, operationName, result }) {
-    return {
-      easeUser: process.env.EASE_USER
-    };
-  }
+app.use('/graphql', graphqlHTTP(request => {
+  const startTime = Date.now();
+  return {
+    schema: schema,
+    rootValue: resolvers,
+    graphiql: true,
+    pretty: true,
+    extensions({ document, variables, operationName, result }) {
+      return {
+        easeUser: global.easeUser,
+        runTime: [Date.now() - startTime, 'ms'].join('')
+      };
+    }
+  };
 }));
 
 app.listen(port);

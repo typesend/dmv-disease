@@ -2,6 +2,22 @@ console.log('DISEASE HAS BEEN INJECTED', window.name)
 
 window.disease = disease = {};
 
+disease.goto = function(relativeURL) {
+  let {href} = new URL(relativeURL, document.baseURI);
+  return window.location = href;
+};
+
+disease.blankPage = function() {
+  window.location = 'about:blank';
+};
+
+disease.login = function(username, password) {
+  let u = document.querySelector('#username').value = username;
+  let p = document.querySelector('#password').value = password;
+  document.querySelector('input[type=submit]').click();
+  return {username: u, password: p};
+};
+
 disease.activeElement = function() {
   let el = document.activeElement;
   let elementJSON = { tagName: el.tagName.toLowerCase() };
@@ -16,15 +32,12 @@ disease.activeElement = function() {
   return elementJSON;
 };
 
-disease.pageDetails = function() {
-  let url = document.URL;
-  let title = document.title;
-  return {url, title};
-};
-
 disease.messages = function() {
-  let selector = 'div#messages > ol.errorMessagesOl > li';
-  let elements = document.querySelectorAll(selector);
+  let selectors = [
+    'div#messages > ol.errorMessagesOl > li',
+    'span.uiErrorInfoMessageForModeSelection'
+  ];
+  let elements = document.querySelectorAll(selectors.join(', '));
   let results = [...elements].map(el => {
     let elementJSON = { tagName: el.tagName.toLowerCase() };
     el.getAttributeNames().forEach(attr => {
@@ -37,6 +50,8 @@ disease.messages = function() {
 };
 
 disease.formElementsToJSON = function() {
+  if (!document.forms[0]) return null;
+
   let elements = document.forms[0].querySelectorAll('input, select, label, span.suggest-hidden');
   let results = [...elements].map(el => {
     let elementJSON = { tagName: el.tagName.toLowerCase() };
