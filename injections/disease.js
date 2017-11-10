@@ -33,10 +33,20 @@ disease.activeElement = function() {
   return elementJSON;
 };
 
+disease.html = function(selector) {
+  const elements = Array.prototype.slice.call(document.querySelectorAll(selector));
+  return elements.map((el) => {
+    let outerHTML = el.outerHTML;
+    let innerText = el.innerText;
+    return {selector, outerHTML, innerText};
+  });
+};
+
 disease.messages = function() {
   let selectors = [
     'div#messages > ol.errorMessagesOl > li',
-    'span.uiErrorInfoMessageForModeSelection'
+    'span.uiErrorInfoMessageForModeSelection',
+    '#MAIN_FORM\\:panelGrid_recordConditions li.recordConditions'
   ];
   let elements = document.querySelectorAll(selectors.join(', '));
   let results = [...elements].map(el => {
