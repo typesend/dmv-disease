@@ -1,5 +1,10 @@
 console.log('DISEASE HAS BEEN INJECTED', window.name)
 
+const blacklistedAttrs = [
+  'onfocus', 'onblur', 'onkeydown',
+  'onkeypress', 'onkeyup', 'onchange'
+];
+
 window.disease = disease = {};
 
 disease.goto = function(relativeURL) {
@@ -21,10 +26,6 @@ disease.login = function(username, password) {
 disease.activeElement = function() {
   let el = document.activeElement;
   let elementJSON = { tagName: el.tagName.toLowerCase() };
-  const blacklistedAttrs = [
-    'onfocus', 'onblur', 'onkeydown',
-    'onkeypress', 'onkeyup', 'onchange'
-  ];
   el.getAttributeNames().forEach(attr => {
     if (blacklistedAttrs.includes(attr)) return;
     elementJSON[attr] = el.getAttribute(attr);
@@ -55,10 +56,6 @@ disease.formElementsToJSON = function() {
   let elements = document.forms[0].querySelectorAll('input, select, label, span.suggest-hidden');
   let results = [...elements].map(el => {
     let elementJSON = { tagName: el.tagName.toLowerCase() };
-    const blacklistedAttrs = [
-      'onfocus', 'onblur', 'onkeydown',
-      'onkeypress', 'onkeyup', 'onchange'
-    ];
 
     el.getAttributeNames().forEach(attr => {
       if (blacklistedAttrs.includes(attr)) return;
