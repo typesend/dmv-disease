@@ -1,0 +1,196 @@
+mutation login($username: String!, $password: String!, $env: Environment!) {
+  login(username: $username, password: $password, env: $env) {
+    footer {
+      screenName
+    }
+  }
+  restoredSessionOK: submitButton(value: "   OK   ") {
+    footer {
+      screenName
+    }
+  }
+  processType: selectOption(selector: "#MAIN_FORM\\:operationalMode", values: ["C"]) {
+    values
+    selector
+  }
+  workType: selectOption(selector: "#MAIN_FORM\\:functionalMode", values: ["D"]) {
+    values
+    selector
+  }
+  workDate: selectOption(selector: "#MAIN_FORM\\:workDate", values: ["01022018"]) {
+    values
+    selector
+  }
+  firstSubmit: submitButton(value: "ENTER") {
+    footer {
+      screenName
+      transactionCode
+      easeVersion
+    }
+    messages {
+      tagName
+      innerText
+      class
+    }
+  }
+  secondSubmitToBypassWorkDateWarning: submitButton(value: "ENTER") {
+    footer {
+      screenName
+      transactionCode
+      easeVersion
+    }
+    messages {
+      tagName
+      innerText
+      class
+    }
+  }
+}
+
+mutation DLA {
+  selectTransaction(ttc: "DLA") {
+    form {
+      id
+      name
+      tagName
+      value
+      for
+      innerText
+      options {
+        selected
+        value
+        innerText
+      }
+    }
+    footer {
+      screenName
+      transactionCode
+      easeVersion
+    }
+    screenshot {
+      timestamp
+    }
+    breadcrumbs {
+      class
+      innerText
+    }
+  }
+  firstName: typeInto(selector: "#MAIN_FORM\\:firstName", value: "BEN") {
+    value
+  }
+  middleName: typeInto(selector: "#MAIN_FORM\\:middleName", value: "CRANDELL") {
+    oldValue
+    value
+  }
+  lastName: typeInto(selector: "#MAIN_FORM\\:lastName", value: "DAMMAN") {
+    oldValue
+    value
+  }
+  birthDate: typeInto(selector: "#MAIN_FORM\\:birthDate", value: "12131983") {
+    oldValue
+    value
+  }
+  city: typeInto(selector: "#MAIN_FORM\\:cityName", value: "SACRAMENTO") {
+    oldValue
+    value
+  }
+  state: typeInto(selector: "#MAIN_FORM\\:state", value: "CA") {
+    oldValue
+    value
+  }
+  suffix: selectOption(selector: "#MAIN_FORM\\:suffix", values: ["II", "SR"]) {
+    value
+    values
+    selector
+  }
+  appliedLicenseClass: typeInto(selector: "#MAIN_FORM\\:appliedLicenseClass", value: "F") {
+    oldValue
+    value
+  }
+  clickEnter: submitButton(value: "ENTER") {
+    footer {
+      screenName
+      transactionCode
+      easeVersion
+    }
+    messages {
+      tagName
+      innerText
+      class
+    }
+  }
+}
+
+query getFormElements {
+  form {
+    name
+    checked
+    value
+  }
+}
+
+mutation checkAllBoxes {
+  endorsements: click(selectors: ["0", "1", "2", "3", "4"], prefix: "#MAIN_FORM\\:endorsements\\:") {
+    screenshot {
+      timestamp
+    }
+  }
+  categories: click(selectors: ["0", "1", "2"], prefix: "#MAIN_FORM\\:category\\:") {
+    form {
+      id
+      type
+      value
+      checked
+    }
+  }
+}
+
+query footer {
+  footer {
+    screenName
+    transactionCode
+    office
+    employee
+    processType
+    workType
+    workDate
+    time
+    easeVersion
+  }
+}
+
+query messages {
+  messages {
+    tagName
+    innerText
+    class
+  }
+}
+
+mutation htmlContents {
+  html(selector: "#contentArea table") {
+    selector
+    innerText
+  }
+}
+
+mutation logout {
+  logout {
+    easeUser
+    logout
+  }
+}
+
+mutation title {
+  page {
+    title
+  }
+}
+
+mutation form {
+  form {
+    value
+    name
+    type
+  }
+}

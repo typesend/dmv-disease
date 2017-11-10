@@ -46,7 +46,8 @@ disease.messages = function() {
   let selectors = [
     'div#messages > ol.errorMessagesOl > li',
     'span.uiErrorInfoMessageForModeSelection',
-    '#MAIN_FORM\\:panelGrid_recordConditions li.recordConditions'
+    '#MAIN_FORM\\:panelGrid_recordConditions li.recordConditions',
+    'input[value="easeSessionExpire"] ~ span.generalText'
   ];
   let elements = document.querySelectorAll(selectors.join(', '));
   let results = [...elements].map(el => {
