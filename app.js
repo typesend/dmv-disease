@@ -12,6 +12,8 @@ initBrowser(global);
 const port = process.env.PORT;
 const app = express();
 
+app.use(express.static('public'));
+
 app.use('/graphql', graphqlHTTP(request => {
   const startTime = Date.now();
   return {
@@ -30,6 +32,7 @@ app.use('/graphql', graphqlHTTP(request => {
 
 app.listen(port);
 console.log('Running a GraphQL API server at localhost:'+port+'/graphql');
+console.log('Running Disease UI at localhost:'+port+'/');
 
 process.on('SIGINT', function() {
   (async () => {

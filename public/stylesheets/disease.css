@@ -1,0 +1,32 @@
+body {
+  padding: 2em;
+  background-color: #dedede !important;
+}
+
+img.tick {
+  width: 1.1em;
+  height 1.1em;
+  margin: 0.2em;
+}
+
+img.logo {
+  width: 120px;
+  height: 120px;
+  margin: 0.1em;
+  float: right;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #ffd556 !important;
+  text-shadow:
+		-1px -1px 0 #999,
+		1px -1px 0 #999,
+		-1px 1px 0 #999,
+		1px 1px 0 #999;
+  letter-spacing: 0.5rem;
+}
+
+.dim {
+  opacity: 0.6;
+}
