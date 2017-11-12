@@ -12,10 +12,9 @@ class DiseaseApp extends React.Component {
           </h1>
           <LoginWarning />
         </div>
-        <p>Hello <Button bsStyle="primary" bsSize="large">
-            {this.props.name || "OK"}
-          </Button>
-        </p>
+        <div className="row">
+          <LoginForm/>
+        </div>
       </div>
     );
   }
