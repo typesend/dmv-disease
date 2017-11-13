@@ -2,7 +2,7 @@
   "scripts": {
     "start": "clear; node app.js",
     "startmon": "clear; nodemon --inspect app.js",
-    "dev": "yarn babel -- lib/ui --watch --out-file public/javascript/disease.js"
+    "dev": "yarn babel -- lib/ui --watch --out-dir public/javascript"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
