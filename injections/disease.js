@@ -97,7 +97,17 @@ disease.formElementsToJSON = function() {
       elementJSON.disabled = el.disabled;
     }
 
-    if ('input' === el.type) {
+    if (null === el.type && 'input' === elementJSON.tagName) {
+      elementJSON.type = el.type = 'text';
+    }
+
+    if ('text' === el.type) {
+      elementJSON.value = el.value;
+      elementJSON.disabled = el.disabled;
+    }
+
+    if ('password' === el.type) {
+      elementJSON.value = el.value;
       elementJSON.disabled = el.disabled;
     }
 

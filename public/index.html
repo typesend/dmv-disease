@@ -10,30 +10,37 @@
     <script src="/javascript/graphql.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <img class="logo" src="/images/dmv.png" />
-    <h1 class="dim">
-      Disease<img class="tick" src="/images/wood_tick.png" />
-    </h1>
 
-    <div id="app">
-      <div id="container">
-
-        <div class="component login-component">
-          <div class="strike">
-            <span>EASE LOGIN</span>
-          </div>
-          <div class="centered">
-            <input type="text" id="username" placeholder="EASE username"/>
-            <input type="password" id="password" placeholder="EASE password" />
-            <input type="text" disabled="true" id="env" value="UAT" size="3" />
-            <button onclick="disease.easeAction(disease.actions.login, [$('#username').val(), $('#password').val(), $('#env').val()]);">
-              Login
-            </button>
-          </div>
+    <div class="strike">
+      <span style="width: 300px">
+        <div id="ease-banner">
+          <h1 class="dim centered">
+            <img class="logo" src="/images/dmv.png" />
+            <span>EASE v3.2.7</span>
+          </h1>
         </div>
-
-      </div>
+        <div id="login-container">
+          <input type="text" name="username" id="username" placeholder="EASE username" size="14"/>
+          <input type="password" name="password" id="password" placeholder="password" size="10" />
+          <input type="text" id="env" disabled="disabled" value="UAT" size="3" tabindex="-1" />
+          <button onclick="disease.easeAction(disease.actions.login, [$('#username').val(), $('#password').val(), $('#env').val()]);">
+            Login
+          </button>
+        </div>
+      </span>
     </div>
+
+    <div id="ease-container"></div>
+
+    <div id="login-warning">
+      <p>WARNING!</p>
+      <p>UNAUTHORIZED ACCESS OR MISUSE OF DATA MAY</p>
+      <p>RESULT IN ADVERSE ACTION AND/OR CRIMINAL PROSECUTION.</p>
+      <p>ALL ACTIVITY IS SUBJECT TO MONITORING.</p>
+    </div>
+
+
+
   </body>
   <script src="/javascript/disease.js" charset="utf-8"></script>
 </html>
