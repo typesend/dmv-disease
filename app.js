@@ -7,7 +7,10 @@ const resolvers = require('./lib/graphql/resolvers');
 
 const { initBrowser } = require('./lib/ease/browser.js');
 
-initBrowser(global);
+(async () => {
+  await initBrowser();
+  console.log("Browser initialized.")
+})();
 
 const port = process.env.PORT;
 const app = express();
