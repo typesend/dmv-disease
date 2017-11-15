@@ -34,13 +34,18 @@ div#login-container {
 
 }
 
-div#ease-container {
-
+div#ease-container .requiredStyle {
+  border-color: red;
+	border-style: solid;
+	border-width: 1px;
 }
 
+div#ease-container input[type=button]{
+  margin: 1.5em 0;
+}
 
-div.messages > .message {
-  color: #ccc;
+div.messages > .message.uiErrorMessage {
+  color: red;
 }
 
 
@@ -48,7 +53,7 @@ div.messages > .message {
   width: 320px;
   border: solid 1px #666;
   position: fixed;
-  top: 10px;
+  top: 60px;
   right: 10px;
 }
 
